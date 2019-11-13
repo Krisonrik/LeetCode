@@ -1,3 +1,7 @@
+import sys
+import io
+
+
 class Solution:
     def intToRoman(self, num: int) -> str:
         thousand: str = ''
@@ -60,3 +64,32 @@ class Solution:
                 one += 'I'
 
         return thousand + five_hundred + one_hundred + fifty + ten + five + one
+
+
+def main(argv):
+
+    # def readlines():
+    #     for line in io.TextIOWrapper(sys.stdin.buffer, encoding='utf-8'):
+    #         yield line.strip('\n')
+
+    # lines = readlines()
+    print(argv)
+    ret = Solution().intToRoman(int(argv[0]))
+
+    out = (ret)
+    print(out)
+    # while True:
+    #     try:
+    #         line = next(lines)
+    #         num = int(line)
+
+    #         ret = Solution().intToRoman(num)
+
+    #         out = (ret)
+    #         print(out)
+    #     except StopIteration:
+    #         break
+
+
+if __name__ == '__main__':
+    main(sys.argv[1:])
